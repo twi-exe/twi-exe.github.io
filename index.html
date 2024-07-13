@@ -3,112 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twix's Blog</title>
+    <title>Twisha Patel's Personal Webpage</title>
     <style>
-     body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f0f0; /* Light gray background */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: rgb(48, 53, 53);
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            color: #333; /* Dark gray text */
+        }
+        header {
+            background: #260e3e;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
         }
         .container {
-            max-width: 800px;
+            width: 80%;
             margin: auto;
+            overflow: hidden;
+        }
+        .content {
+            background: #fff;
             padding: 20px;
-            background-color: #fff; /* White background for content */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-            border-radius: 8px; /* Rounded corners */
+            margin: 20px 0;
         }
-        h1 {
-            font-family: 'Papyrus', 'Harrington', fantasy;
+        footer {
             text-align: center;
-            color: #6a0dad; /* Purple */
-            margin-top: 10px;
-        }
-        h2 {
-            font-size: 2em;
-            color: #6a0dad; /* Purple */
-            font-family: 'Papyrus', 'Harrington', fantasy;
-            text-align: center;
-            margin-top: 30px;
-        }
-        h3 {
+            padding: 20px;
+            background: #333;
             color: #fff;
-            background-color: #6a0dad; /* Purple */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 1.3em;
-            font-style: italic;
-            padding: 10px;
-            text-align: center;
-            margin-top: 0;
-            border-radius: 6px; /* Rounded background */
-        }
-        p {
-            background-color: #f7dede; /* Light pink background for paragraphs */
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 4px; /* Rounded corners */
-        }
-        .sub {
-            text-align: right;
-            font-style: italic;
-            font-size: 0.8em;
-            font-family: serif;
-            color: #666; /* Gray text */
-        }
-        #quotes {
-            font-family: 'Papyrus', 'Harrington', fantasy;
-            text-align: center;
-            font-weight: bold;
-            color: #6a0dad; /* Purple */
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
             margin-top: 20px;
         }
-        ul li {
-            margin-bottom: 10px;
-        }
-        a {
-            text-decoration: none;
-            color: #6a0dad; /* Purple */
-        }
-        a:hover {
-            text-decoration: underline;
+        .hidden {
+            display: none;
         }
     </style>
-    </style>
+    <script>
+        function toggleProjects() {
+            var projectsSection = document.getElementById('projects');
+            if (projectsSection.classList.contains('hidden')) {
+                projectsSection.classList.remove('hidden');
+            } else {
+                projectsSection.classList.add('hidden');
+            }
+        }
+    </script>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>Twisha Patel</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div class="container">
-        <h1>Twix's Blog</h1>
+        <section id="about" class="content">
+            <h2>About Me</h2>
+            <p>Hello! I'm Twisha Patel, a Computer Engineering student at GEC, Bharuch. I graduated high school with 83.33% and am passionate about programming and software development. My goal is to become a proficient software developer. I have experience in languages like C, C++, Java, and Python, and basic knowledge of HTML, CSS, and JavaScript.</p>
+        </section>
 
-        <h3>Contents</h3>
-        <ul>
-            <li><a href="#1">My First Significant Birthday</a></li>
-            <li><a href="#2">Voice Unheard</a></li>
-        </ul>
+        <section id="skills" class="content">
+            <h2>Skills</h2>
+            <ul>
+                <li>C</li>
+                <li>C++</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>HTML, CSS, JavaScript (Basic)</li>
+            </ul>
+        </section>
 
-    <h2 id="1">My Birthday</h2>
-    <p class="sub">Posted on February 24th 2020, 22:00</p>
-    
-    <p><strong>15</strong> years into my life! Kind of sounds fascinating to me. Yes, it was my Birthday today. To be Honest, <em><strong>Best Birthday Ever</strong></em>.To start, it was a regular day and I ain't that excited for birthdays but 15 years sounded <em>big</em>. I got up early to mark exact 15 years of my existence, Did I tell you I was born at 5:45? And just so I realized my change in past 15 years or at least what I could remember till then. In the past few years, I changed as a physique and as a person; <em>more curious, enthusiastic and, of course, more motivated.</em> I spent a fair amount of time thinking about my life and some <em>deep stuff</em>.Overall, I had a great day (and night too). My tongue is soo sweet even right now, I've had <em>Cakes and Doughnuts and Smoothies</em>; I can't even count how much!! We had a grand party arranged by my Classmates and Friends, it was <strong><em>awesome</em></strong>. At home, we had a huge dinner with family. Interaction with a lot of people, if you ask me; never had this much attention (even though I love my privacy and solitude more).For a person who is <em>not</em> a fan of Birthdays, well, this birthday was a <strong>blast</strong> for me. I had a lot of time <em>alone</em>, which I <em>*absolutely*</em> loved, but aside from that my best friends and my family made it <strong><em>even better!</em></strong></p>
-    
-    <p id="quotes">"Couldn't have asked for a better Birthday!"</p>
+        <section id="projects" class="content hidden">
+            <h2>Projects</h2>
+            <p>Currently, I am working on a data analytics project focusing on the UN's SDG 14 (Life Below Water) to study the impact of plastic pollution on marine life. Additionally, I am enhancing my knowledge in Java, working on topics like multithreading, exception handling, collections, generics, and recursion.</p>
+            <p>I have also completed a one-month online internship at Origintech about AWS-IoT.</p>
+        </section>
 
-    <h2 id="2">Voice Unheard</h2>
-    <p class="sub">Posted on July 18th 2020, 22:00</p>
-    
-    <p>I always had this idea in the back of my mind; that I would be able to share my idea to the <em>world</em>. I would be <em>heard</em> and be <em>noticed</em>. Well, this could obviously be a result of the fact that I am neglected a lot, but that's not a point. The point is that I let <strong>my voice</strong> out, out there in the real world.</p>
-    
-    <p>So... I decided to start my new Blog (on <em>Blogspot</em>). And it's named <strong><em>Voice Unheard</em></strong> dedicated to mine that's yearning to be heard. I've not maintained it properly <em>yet</em>. But soon, I think I will get a hold of it. <em>*wink*</em></p>
-    
-    <p>There must be something that you <em>fear</em>, everyone has something. Mine is being <strong><em>invisible</em></strong>, going <em>unheard</em>. This blog is totally dedicated to me finding my <em>lost voice</em>, accepting my thoughts as my own and not throwing them away.</p>
+        <button onclick="toggleProjects()">Toggle Projects Section</button>
+
+        <section id="contact" class="content">
+            <h2>Contact</h2>
+            <p>You can reach me at <a href="twishapatel063@gmail.com">twishapatel063@gmail.com</a> or connect with me on <a href="https://www.linkedin.com/in/twisha-patel063" target="_blank">LinkedIn</a> and <a href="https://github.com/twix402" target="_blank">GitHub</a>.</p>
+        </section>
     </div>
 
+    <footer>
+        <p>© 2024 Twisha Patel</p>
+    </footer>
 </body>
 </html>
