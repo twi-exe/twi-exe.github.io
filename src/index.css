@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg: #000000;
+  --accent: #663399;
+  --card: #4B3A67;
+  --muted: #8A6FAE;
+}
+
+body {
+  @apply bg-abyss text-gray-100 antialiased;
+  font-family: theme('fontFamily.body');
+}
+
+.card {
+  @apply bg-violet-smoke/80 border border-ash rounded-lg p-6 shadow-sm;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(46,26,71,0.55), rgba(75,58,103,0.35));
+  backdrop-filter: blur(6px);
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Distributed System Simulator",
+    "description": "A tool for simulating distributed algorithms in a controlled environment.",
+    "link": "https://github.com/twisha/distributed-sim",
+    "tags": ["Python", "Networking", "Research"]
+  },
+  {
+    "id": 2,
+    "title": "Reproducible Research Framework",
+    "description": "Framework for creating reproducible computational experiments.",
+    "link": "https://github.com/twisha/repro-framework",
+    "tags": ["Python", "Docker", "CI/CD"]
+  },
+  {
+    "id": 3,
+    "title": "Violet Dusk Theme",
+    "description": "A dark, poetic theme for code editors.",
+    "link": "https://github.com/twisha/violet-dusk-theme",
+    "tags": ["VSCode", "Theme", "Design"]
+  }
+]
