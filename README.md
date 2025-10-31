@@ -1,6 +1,6 @@
 # Twisha Patel — Personal Portfolio (twisha-portfolio)
 
-Digital study in violet dusk — a minimal, academic portfolio scaffold built with React + Vite + TailwindCSS and deployed via GitHub Pages.
+Digital study in violet dusk — a multi-page portfolio built with React + Vite + TailwindCSS and deployed via GitHub Pages.
 
 ## Quick start
 
@@ -34,20 +34,36 @@ This repo includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) th
 
 Key files and folders:
 
-- `public/` — favicon, og-image, robots
-- `src/` — React app, components, data
-  - `src/components/` — Navbar, Hero, Projects, Research, Blog, Contact, Footer
-  - `src/data/` — `projects.json`, `research.json`, `blog.json` (add entries here)
+- `public/` — favicon, og-image, robots, 404.html for routing
+- `src/pages/` — Individual page components (Home, About, Projects, etc.)
+- `src/components/` — Reusable components (Navbar, Footer, cards)
+- `src/data/` — JSON files for projects, research, blog posts
+
+## Navigation & Routing
+
+The site uses React Router for multi-page navigation:
+
+- `/` — Home/landing page
+- `/about` — About section
+- `/projects` — Projects grid
+- `/research` — Research publications
+- `/blog` — Blog posts (Markdown-ready)
+- `/contact` — Contact form and links
+- `/archive` — Legacy works (optional)
+
+Each page is lazy-loaded for performance. GitHub Pages routing is handled via `404.html` fallback.
 
 ## Adding content
 
-- Projects: add objects to `src/data/projects.json` with fields: `id`, `title`, `description`, `link`, `tags`.
-- Research: add entries to `src/data/research.json` (Markdown-ready `abstract` / `links`).
-- Blog: add preview items to `src/data/blog.json`; full posts can be synced from Obsidian/Markdown later.
+- **Projects**: Add objects to `src/data/projects.json` with `id`, `title`, `description`, `link`, `tags`
+- **Research**: Add entries to `src/data/research.json` (abstract, links)
+- **Blog**: Add previews to `src/data/blog.json`; full posts can be integrated with Markdown later
+- **New Pages**: Create in `src/pages/`, add route in `App.jsx`, and link in `Navbar.jsx`
 
 ## Notes & future integrations
 
-- Placeholders for GitHub API fetch (live stars), MathJax/KaTeX support, Obsidian sync, and a dynamic “Lab / Vault” area are present in code comments.
+- Placeholders for GitHub API (live stats), MathJax/KaTeX (academic papers), Obsidian sync, and dynamic "Lab / Vault" area
+- Blog supports Markdown via `react-markdown`
 
 ---
 
