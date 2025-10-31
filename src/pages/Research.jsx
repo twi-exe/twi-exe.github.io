@@ -1,17 +1,24 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import research from '../data/research.json'
 
 function ResearchCard({r}){
+  const slugMap = {
+    1: 'on-the-efficiency-of-consensus-algorithms-in-dynamic-networks',
+    2: 'reproducibility-in-computational-research-a-case-study'
+  }
+  const to = r.slug ? `/research/${r.slug}` : (slugMap[r.id] ? `/research/${slugMap[r.id]}` : `/research/${r.id}`)
+
   return (
-    <motion.article whileHover={{scale:1.01}} className="card">
-      <h3 className="text-rebecca font-semibold text-lg">{r.title}</h3>
+    <motion.div whileHover={{scale:1.01}} className="card">
+      <h4 className="text-rebecca font-semibold text-lg">{r.title}</h4>
       <div className="text-sm text-gray-300 mt-2">{r.authors} · {r.year}</div>
       <p className="mt-3 text-gray-200 text-sm">{r.abstract}</p>
       <div className="mt-3 text-sm">
-        <a className="text-dim-lilac hover:text-rebecca" href={r.link || '#'} target="_blank" rel="noopener noreferrer">Paper / Repo</a>
+        <Link to={to} className="text-dim-lilac hover:text-rebecca">Read More →</Link>
       </div>
-    </motion.article>
+    </motion.div>
   )
 }
 

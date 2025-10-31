@@ -1,14 +1,26 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import projects from '../data/projects.json'
 
 function ProjectCard({p}){
+  // Map certain project ids to pre-generated static slugs
+  // Prefer explicit slug field on the project object. Fall back to an explicit map then id.
+  const slugMap = {
+    1: 'distributed-system-simulator',
+    2: 'reproducible-research-framework',
+    3: 'violet-dusk-theme'
+  }
+
+  const to = p.slug ? `/projects/${p.slug}` : (slugMap[p.id] ? `/projects/${slugMap[p.id]}` : `/projects/${p.id}`)
+
   return (
-    <motion.a whileHover={{y:-4}} className="block card" href={p.link || '#'} target="_blank" rel="noopener noreferrer">
+    <motion.div whileHover={{y:-4}} className="card">
       <div className="text-sm text-dim-lilac">{p.tags?.join(' · ')}</div>
       <h3 className="mt-2 text-xl font-semibold text-rebecca">{p.title}</h3>
       <p className="mt-2 text-gray-200 text-sm">{p.description}</p>
-    </motion.a>
+      <Link to={to} className="mt-3 inline-block text-dim-lilac hover:text-rebecca">View Details →</Link>
+    </motion.div>
   )
 }
 
@@ -26,4 +38,14 @@ export default function Projects(){
       </div>
     </div>
   )
+}
+
+// Helper to map ids to slugs (kept small and explicit)
+export const projectSlug = (id)=>{
+  switch(id){
+    case 1: return '/projects/distributed-system-simulator'
+    case 2: return '/projects/reproducible-research-framework'
+    case 3: return '/projects/violet-dusk-theme'
+    default: return `/projects/${id}`
+  }
 }

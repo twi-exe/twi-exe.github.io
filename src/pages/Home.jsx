@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 export default function Home(){
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <section className="pt-24 pb-12">
+    <section className="pt-4 pb-12">
         <div className="max-w-3xl mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 8 }}

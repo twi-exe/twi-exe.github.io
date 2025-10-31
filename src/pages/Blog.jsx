@@ -1,9 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ReactMarkdown from 'react-markdown'
 import blogs from '../data/blog.json'
 
 function BlogPreview({b}){
+  const slugMap = {
+    1: 'reflections-on-code-and-clarity',
+    2: 'building-in-the-amethyst-hours'
+  }
+  const to = b.slug ? `/blog/${b.slug}` : (slugMap[b.id] ? `/blog/${slugMap[b.id]}` : `/blog/${b.id}`)
+
   return (
     <motion.article className="card" whileHover={{y:-2}}>
       <div className="text-sm text-dim-lilac">{b.date}</div>
@@ -12,7 +19,7 @@ function BlogPreview({b}){
         <ReactMarkdown>{b.excerpt}</ReactMarkdown>
       </div>
       <div className="mt-3">
-        <a className="text-dim-lilac hover:text-rebecca" href={b.link || '#'} target="_blank" rel="noopener noreferrer">Read more</a>
+        <Link to={to} className="text-dim-lilac hover:text-rebecca">Read more →</Link>
       </div>
     </motion.article>
   )
