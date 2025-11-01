@@ -11,13 +11,6 @@ export default function Contact(){
     setIsSubmitting(true)
     setSubmitStatus(null)
 
-    console.log('Environment variables:', {
-      serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      autoreplyId: import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID,
-      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    })
-
     try {
       // Send contact email to you
       await emailjs.sendForm(
@@ -28,18 +21,17 @@ export default function Contact(){
       )
 
       // Send auto-reply to sender
-      // await emailjs.sendForm(
-      //   import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      //   import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID, // Template for sender
-      //   e.target,
-      //   import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      // )
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID, // Template for sender
+        e.target,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
 
       setSubmitStatus('success')
       e.target.reset()
     } catch (error) {
       console.error('EmailJS error:', error)
-      console.error('Error details:', error.text || error.message)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
