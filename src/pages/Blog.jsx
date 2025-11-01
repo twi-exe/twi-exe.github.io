@@ -5,11 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import blogs from '../data/blog.json'
 
 function BlogPreview({b}){
-  const slugMap = {
-    1: 'reflections-on-code-and-clarity',
-    2: 'building-in-the-amethyst-hours'
-  }
-  const to = b.slug ? `/blog/${b.slug}` : (slugMap[b.id] ? `/blog/${slugMap[b.id]}` : `/blog/${b.id}`)
+  const to = `/blog/${b.slug}`
 
   return (
     <motion.article className="card glass" whileHover={{y:-2}}>

@@ -4,11 +4,7 @@ import { motion } from 'framer-motion'
 import research from '../data/research.json'
 
 function ResearchCard({r}){
-  const slugMap = {
-    1: 'on-the-efficiency-of-consensus-algorithms-in-dynamic-networks',
-    2: 'reproducibility-in-computational-research-a-case-study'
-  }
-  const to = r.slug ? `/research/${r.slug}` : (slugMap[r.id] ? `/research/${slugMap[r.id]}` : `/research/${r.id}`)
+  const to = `/research/${r.slug}`
 
   return (
     <motion.div whileHover={{scale:1.01}} className="card glass">

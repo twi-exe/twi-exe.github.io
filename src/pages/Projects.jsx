@@ -4,15 +4,7 @@ import { motion } from 'framer-motion'
 import projects from '../data/projects.json'
 
 function ProjectCard({p}){
-  // Map certain project ids to pre-generated static slugs
-  // Prefer explicit slug field on the project object. Fall back to an explicit map then id.
-  const slugMap = {
-    1: 'distributed-system-simulator',
-    2: 'reproducible-research-framework',
-    3: 'violet-dusk-theme'
-  }
-
-  const to = p.slug ? `/projects/${p.slug}` : (slugMap[p.id] ? `/projects/${slugMap[p.id]}` : `/projects/${p.id}`)
+  const to = `/projects/${p.slug}`
 
   return (
     <motion.div whileHover={{y:-4}} className="card glass">
@@ -38,14 +30,4 @@ export default function Projects(){
       </div>
     </div>
   )
-}
-
-// Helper to map ids to slugs (kept small and explicit)
-export const projectSlug = (id)=>{
-  switch(id){
-    case 1: return '/projects/distributed-system-simulator'
-    case 2: return '/projects/reproducible-research-framework'
-    case 3: return '/projects/violet-dusk-theme'
-    default: return `/projects/${id}`
-  }
 }
