@@ -12,24 +12,27 @@ export default function Contact(){
     setSubmitStatus(null)
 
     try {
-      // Send contact email to you
-      await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // Template for you
-        e.target,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
-
-      // Send auto-reply to sender
-      await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID, // Template for sender
-        e.target,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
-
-      setSubmitStatus('success')
-      e.target.reset()
+      // Add logging to capture form data and response details
+      const o = async l => {
+        l.preventDefault();
+        t(!0);
+        i(null);
+        try {
+          console.log("Form data:", Object.fromEntries(new FormData(l.target)));
+          const response1 = await x.sendForm("service_weg4il7", "template_33beoaf", l.target, "lZS1Gf7PgdadwFnBA");
+          console.log("Response from template_33beoaf:", response1);
+          const response2 = await x.sendForm("service_weg4il7", "template_ckriwuu", l.target, "lZS1Gf7PgdadwFnBA");
+          console.log("Response from template_ckriwuu:", response2);
+          i("success");
+          l.target.reset();
+        } catch (error) {
+          console.error("Error during form submission:", error);
+          i("error");
+        } finally {
+          t(!1);
+        }
+      };
+      o(e)
     } catch (error) {
       setSubmitStatus('error')
     } finally {
