@@ -31,7 +31,6 @@ export default function Contact(){
       setSubmitStatus('success')
       e.target.reset()
     } catch (error) {
-      console.error('EmailJS error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
