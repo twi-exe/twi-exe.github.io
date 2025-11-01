@@ -1,6 +1,4 @@
-const e=`# Building in the Amethyst Hours
-
-There's something magical about coding when the world sleeps. The amethyst hours—those twilight moments between midnight and dawn—hold a special place in my creative process.
+const e=`There's something magical about coding when the world sleeps. The amethyst hours—those twilight moments between midnight and dawn—hold a special place in my creative process.
 
 ## The Midnight Muse
 

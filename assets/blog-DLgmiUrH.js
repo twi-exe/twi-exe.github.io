@@ -1,4 +1,4 @@
-const e=`# Reflections on Code and Clarity
+const e=[{id:1,slug:"reflections-on-code-and-clarity",title:"Reflections on Code and Clarity",date:"2024-10-15",excerpt:"Thoughts on writing clean code and the art of simplicity in complex systems.",content:`# Reflections on Code and Clarity
 
 In the quiet hours of debugging, I often find myself reflecting on the elegance of simplicity. Clean code isn't just about readability—it's about creating systems that whisper their intentions rather than shout them.
 
@@ -12,4 +12,4 @@ Simplicity in code is like a well-crafted poem: every line serves a purpose, eve
 
 Sometimes complexity is necessary, but it should always be intentional. Each layer of abstraction should solve a real problem, not create new ones.
 
-The challenge lies in knowing when to embrace complexity and when to reject it. Experience teaches us that the simplest solution is often the hardest to find, but always worth the search.`;export{e as default};
+The challenge lies in knowing when to embrace complexity and when to reject it. Experience teaches us that the simplest solution is often the hardest to find, but always worth the search.`,link:"#"},{id:2,slug:"nothing-to-lose",title:"Nothing to lose.",date:"2024-10-16",excerpt:"What more do I have to lose?",content:"# ",link:"#"}];export{e as default};
