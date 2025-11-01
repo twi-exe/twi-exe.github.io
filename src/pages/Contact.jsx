@@ -3,13 +3,13 @@ import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 
 export default function Contact(){
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const [status, setStatus] = useState(null)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus(null)
+    setIsLoading(true)
+    setStatus(null)
 
     try {
       // Add logging to capture form data and response details
@@ -34,9 +34,9 @@ export default function Contact(){
       };
       o(e)
     } catch (error) {
-      setSubmitStatus('error')
+      setStatus('error')
     } finally {
-      setIsSubmitting(false)
+      setIsLoading(false)
     }
   }
 
@@ -93,15 +93,15 @@ export default function Contact(){
             ></textarea>
             <button 
               type="submit" 
-              disabled={isSubmitting}
+              disabled={isLoading}
               className="px-6 py-2 bg-rebecca text-white rounded hover:bg-dim-lilac disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
-              {isSubmitting ? 'Sending...' : 'Send'}
+              {isLoading ? 'Sending...' : 'Send'}
             </button>
-            {submitStatus === 'success' && (
+            {status === 'success' && (
               <p className="text-green-400 text-sm">Message sent successfully!</p>
             )}
-            {submitStatus === 'error' && (
+            {status === 'error' && (
               <p className="text-red-400 text-sm">Failed to send message. Please try again.</p>
             )}
           </form>
