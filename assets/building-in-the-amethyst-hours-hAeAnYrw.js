@@ -1,10 +1,5 @@
-const e=`There's something magical about coding when the world sleeps. The amethyst hours—those twilight moments between midnight and dawn—hold a special place in my creative process.
+const e=`There's something magical about coding when the world sleeps. The amethyst hours—those twilight moments between midnight and dawn—hold a special place in my creative process. In the stillness of night, distractions fade. The mind becomes a clearer canvas for complex ideas. Algorithms that seemed impossible during the day suddenly unfold like origami.
 
-## The Midnight Muse
-
-In the stillness of night, distractions fade. The mind becomes a clearer canvas for complex ideas. Algorithms that seemed impossible during the day suddenly unfold like origami.
-
-## Creative Flow
 
 Late-night sessions aren't about productivity metrics. They're about diving deep into problems, exploring dead ends, and emerging with insights that daylight would have obscured.
 

@@ -1,0 +1,1 @@
+const t=[{id:1,slug:"building-in-amethyst-hours",title:"Building in Amethyst Hours.",date:"2024-10-15",excerpt:"The lilac evenings turn into amethyst nights, where nocturnal beings rise.",content:"#",link:"#"},{id:2,slug:"nothing-to-lose",title:"Nothing to lose.",date:"2024-10-16",excerpt:"What more do I have to lose?",content:"# ",link:"#"}];export{t as default};
