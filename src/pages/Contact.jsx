@@ -21,12 +21,12 @@ export default function Contact(){
       )
 
       // Send auto-reply to sender
-      await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID, // Template for sender
-        e.target,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
+      // await emailjs.sendForm(
+      //   import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      //   import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID, // Template for sender
+      //   e.target,
+      //   import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      // )
 
       setSubmitStatus('success')
       e.target.reset()
