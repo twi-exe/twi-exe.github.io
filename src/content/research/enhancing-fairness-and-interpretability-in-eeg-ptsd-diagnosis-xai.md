@@ -1,5 +1,3 @@
-# Enhancing Fairness and Interpretability in EEG-Based PTSD Diagnosis with XAI
-
 Pioneered the use of Explainable AI (XAI) in Electroencephalogram (EEG) analysis to transform Post-Traumatic Stress Disorder (PTSD) diagnosis into a transparent and trustworthy process.
 
 Identified a critical neurophysiological biomarker for PTSD: Beta Power Spectral Density in the Right Primary Motor Cortex, linking the disorder directly to heightened arousal and sensory impairments.
