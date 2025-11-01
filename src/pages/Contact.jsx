@@ -1,7 +1,51 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 
 export default function Contact(){
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    console.log('Environment variables:', {
+      serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      autoreplyId: import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID,
+      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    })
+
+    try {
+      // Send contact email to you
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // Template for you
+        e.target,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+
+      // Send auto-reply to sender
+      // await emailjs.sendForm(
+      //   import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      //   import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID, // Template for sender
+      //   e.target,
+      //   import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      // )
+
+      setSubmitStatus('success')
+      e.target.reset()
+    } catch (error) {
+      console.error('EmailJS error:', error)
+      console.error('Error details:', error.text || error.message)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <section id="contact" className="py-12">
       <div className="max-w-2xl mx-auto card glass">
@@ -23,13 +67,49 @@ export default function Contact(){
             <a href="https://linkedin.com/in/dte-gecbh-com-twisha-patel" className="text-gray-200 hover:text-rebecca">Twisha Patel</a>
           </div>
         </div>
-        {/* Placeholder for EmailJS form */}
         <div className="mt-8">
-          <form className="space-y-4">
-            <input type="text" placeholder="Name" className="w-full p-3 bg-violet-smoke border border-ash rounded" />
-            <input type="email" placeholder="Email" className="w-full p-3 bg-violet-smoke border border-ash rounded" />
-            <textarea placeholder="Message" rows="4" className="w-full p-3 bg-violet-smoke border border-ash rounded"></textarea>
-            <button type="submit" className="px-6 py-2 bg-rebecca text-white rounded hover:bg-dim-lilac">Send</button>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <input 
+              type="text" 
+              name="from_name"
+              placeholder="Name" 
+              required
+              className="w-full p-3 bg-violet-smoke border border-ash rounded focus:border-rebecca focus:outline-none" 
+            />
+            <input 
+              type="email" 
+              name="from_email"
+              placeholder="Email" 
+              required
+              className="w-full p-3 bg-violet-smoke border border-ash rounded focus:border-rebecca focus:outline-none" 
+            />
+            <input 
+              type="text" 
+              name="subject"
+              placeholder="Subject" 
+              required
+              className="w-full p-3 bg-violet-smoke border border-ash rounded focus:border-rebecca focus:outline-none" 
+            />
+            <textarea 
+              name="message"
+              placeholder="Message" 
+              rows="4" 
+              required
+              className="w-full p-3 bg-violet-smoke border border-ash rounded focus:border-rebecca focus:outline-none resize-none"
+            ></textarea>
+            <button 
+              type="submit" 
+              disabled={isSubmitting}
+              className="px-6 py-2 bg-rebecca text-white rounded hover:bg-dim-lilac disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            >
+              {isSubmitting ? 'Sending...' : 'Send'}
+            </button>
+            {submitStatus === 'success' && (
+              <p className="text-green-400 text-sm">Message sent successfully!</p>
+            )}
+            {submitStatus === 'error' && (
+              <p className="text-red-400 text-sm">Failed to send message. Please try again.</p>
+            )}
           </form>
         </div>
       </div>
