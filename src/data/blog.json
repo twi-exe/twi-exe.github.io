@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "slug": "reflections-on-code-and-clarity",
-    "title": "Reflections on Code and Clarity",
+    "slug": "building-in-amethyst-hours",
+    "title": "Building in Amethyst Hours.",
     "date": "2024-10-15",
-    "excerpt": "Thoughts on writing clean code and the art of simplicity in complex systems.",
-    "content": "# Reflections on Code and Clarity\n\nIn the quiet hours of debugging, I often find myself reflecting on the elegance of simplicity. Clean code isn't just about readability—it's about creating systems that whisper their intentions rather than shout them.\n\n## The Art of Simplicity\n\nSimplicity in code is like a well-crafted poem: every line serves a purpose, every abstraction reveals deeper truth. When we strip away the unnecessary, we're left with the essence of the problem.\n\n> \"Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away.\" — Antoine de Saint-Exupéry\n\n## Complexity as a Choice\n\nSometimes complexity is necessary, but it should always be intentional. Each layer of abstraction should solve a real problem, not create new ones.\n\nThe challenge lies in knowing when to embrace complexity and when to reject it. Experience teaches us that the simplest solution is often the hardest to find, but always worth the search.",
+    "excerpt": "The lilac evenings turn into amethyst nights, where nocturnal beings rise.",
+    "content": "#",
     "link": "#"
   },
   {
