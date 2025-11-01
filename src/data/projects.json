@@ -1,43 +1,14 @@
-[
-  {
-    "id": 1,
-    "slug": "distributed-system-simulator",
-    "title": "Distributed System Simulator",
-    "description": "A tool for simulating distributed algorithms in a controlled environment.",
-    "link": "https://github.com/twisha/distributed-sim",
-    "tags": ["Python", "Networking", "Research"],
-    "content": "# Distributed System Simulator\n\nThis simulator allows experimentation with consensus protocols and failure scenarios in a controlled environment. Use the simulator to reproduce results from the distributed systems literature and to test novel protocol ideas.\n\n## Features\n- Simulate node failures and network partitions\n- Measure latency, throughput and agreement time\n- Plug-in custom algorithms\n"
-  },
-  {
-    "id": 2,
-    "slug": "reproducible-research-framework",
-    "title": "Reproducible Research Framework",
-    "description": "Framework for creating reproducible computational experiments.",
-    "link": "https://github.com/twisha/repro-framework",
-    "tags": ["Python", "Docker", "CI/CD"],
-    "content": "# Reproducible Research Framework\n\nA toolkit and opinionated workflow for packaging experiments, data, and environment to make computational research reproducible across machines and time. Includes templates, Docker recipes, and CI examples.\n"
-  },
-  {
-    "id": 3,
-    "slug": "violet-dusk-theme",
-    "title": "Violet Dusk Theme",
-    "description": "A dark, poetic theme for code editors.",
-    "link": "https://github.com/twisha/violet-dusk-theme",
-    "tags": ["VSCode", "Theme", "Design"],
-    "content": "# Violet Dusk Theme\n\nA hand-crafted color theme inspired by late-night reading and soft violet gradients. Includes editor, terminal, and syntax rules for clarity and low-eye-strain during long writing sessions.\n"
-  }
- ,
-  {
-    "id": 4,
+[  {
+    "id":1 ,
     "slug": "surxit-health-risk-intelligence-platform",
     "title": "suRxit — Health Risk Intelligence Platform",
     "description": "Core ML and data pipeline for clinical entity extraction and GNN-based risk prediction at scale.",
-    "link": "#",
+    "link": "https://github.com/ParmarDarshan29/suRxit",
     "tags": ["ML", "NLP", "GNN", "MedLM", "Production"],
     "content": "# suRxit — Health Risk Intelligence Platform\n\nDeveloped and deployed the core ML and data pipeline, standardizing clinical entities from raw documents and feeding the information into a Graph Neural Network (GNN) for risk prediction at scale.\n\nContributed to the full product lifecycle, from high-fidelity data extraction (OCR/NER) to engineering the risk modeling and recommendation service powered by large language models (MedLM).\n\n## Highlights\n- Standardized clinical entity extraction from heterogeneous medical documents (OCR + NER).\n- Built a scalable pipeline that materializes structured clinical graphs for downstream modeling.\n- Trained and deployed a GNN-based risk prediction model for population-level risk scoring.\n- Engineered a MedLM-backed recommendation service for actionable clinical insights.\n"
   },
   {
-    "id": 5,
+    "id": 2,
     "slug": "brain-tumor-detection-and-segmentation",
     "title": "Brain Tumor Detection and Segmentation",
     "description": "Configurable 3D medical image segmentation framework for multi-class glioma segmentation.",
