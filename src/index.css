@@ -22,3 +22,17 @@ body {
   background: linear-gradient(180deg, rgba(46,26,71,0.55), rgba(75,58,103,0.35));
   backdrop-filter: blur(6px);
 }
+
+.btn-primary {
+  @apply px-6 py-3 bg-rebecca text-white rounded hover:bg-dim-lilac;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 border border-ash text-gray-200 rounded hover:bg-violet-smoke;
+}
+
+/* Ensure button styles override prose */
+.prose .btn-primary,
+.prose .btn-secondary {
+  @apply text-current no-underline;
+}

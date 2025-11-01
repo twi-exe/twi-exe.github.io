@@ -10,15 +10,38 @@ export default function GenericDetail({ type }){
 
   React.useEffect(()=>{
     let mounted = true
-    import(`../data/${type}.json`).then(mod => {
-      if(!mounted) return
-      const list = mod.default || mod
-      const found = list.find(i => i.slug === slug)
-      setItem(found || null)
-    }).catch(err => {
-      console.error('Failed to load data', err)
-      if(mounted) setItem(null)
-    })
+    // glob all markdown files as raw strings so Vite includes them in the bundle
+    const mdFiles = import.meta.glob('../content/**/*.md', { as: 'raw' })
+
+    ;(async ()=>{
+      try {
+        const mod = await import(`../data/${type}.json`)
+        if(!mounted) return
+        const list = mod.default || mod
+        const found = list.find(i => i.slug === slug)
+
+        const mdPath = `../content/${type}/${slug}.md`
+        if(mdFiles[mdPath]){
+          try{
+            const content = await mdFiles[mdPath]()
+            if(!mounted) return
+            if(found){
+              setItem({...found, content: content || found.content})
+              return
+            }
+            setItem({ title: (slug || '').replace(/-/g,' '), content })
+            return
+          }catch(e){
+            console.warn('Failed to load markdown via glob', e)
+          }
+        }
+
+        setItem(found || null)
+      } catch(err){
+        console.error('Failed to load data', err)
+        if(mounted) setItem(null)
+      }
+    })()
     return ()=>{ mounted = false }
   },[slug,type])
 
@@ -26,13 +49,30 @@ export default function GenericDetail({ type }){
     <div className="container mx-auto px-4 py-12 text-center">Loading…</div>
   )
 
-  if(item === null) return (
-    <div className="container mx-auto px-4 py-12 text-center">
-      <h2 className="text-2xl font-heading text-rebecca">Not found</h2>
-      <p className="text-gray-300 mt-2">No {type.slice(0,-1)} found for “{slug}”.</p>
-      <Link to={`/${type}`} className="mt-4 inline-block text-dim-lilac">← Back</Link>
-    </div>
-  )
+  if(item === null) {
+    const title = type === 'research' ? 'Research Not Found'
+      : type === 'projects' ? 'Project Not Found'
+      : type === 'blog' ? 'Blog Post Not Found'
+      : 'Not found'
+
+    const message = type === 'research' ? "The research work you're looking for doesn't exist."
+      : type === 'projects' ? "The project you're looking for doesn't exist."
+      : type === 'blog' ? "The blog post you're looking for doesn't exist."
+      : `No ${type.slice(0,-1)} found for “${slug}”.`
+
+    const backLabel = type === 'research' ? 'Back to Research'
+      : type === 'projects' ? 'Back to Projects'
+      : type === 'blog' ? 'Back to Blog'
+      : '← Back'
+
+    return (
+      <div className="container mx-auto px-4 py-12 text-center">
+        <h1 className="text-3xl font-heading text-rebecca mb-4">{title}</h1>
+        <p className="text-gray-300 mb-6">{message}</p>
+        <Link to={`/${type}`} className="px-6 py-3 bg-rebecca text-white rounded hover:bg-dim-lilac">{backLabel}</Link>
+      </div>
+    )
+  }
 
   return (
     <article className="container mx-auto px-4 py-12 max-w-4xl">
@@ -45,8 +85,9 @@ export default function GenericDetail({ type }){
       </div>
 
       <div className="mt-6 flex gap-3">
-        {item.github && <a href={item.github} className="bg-rebecca px-4 py-2 rounded text-white" target="_blank" rel="noopener noreferrer">GitHub</a>}
-        {item.link && <a href={item.link} className="border px-4 py-2 rounded text-gray-200" target="_blank" rel="noopener noreferrer">External</a>}
+        {item.link && <a href={item.link} className="btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>}
+        {item.github && <a href={item.github} className="btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>}
+        <Link to={`/${type}`} className="btn-secondary">More {type.charAt(0).toUpperCase() + type.slice(1)}</Link>
       </div>
     </article>
   )

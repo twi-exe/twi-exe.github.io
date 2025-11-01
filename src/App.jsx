@@ -8,6 +8,7 @@ const Home = lazy(() => import('./pages/Home'))
 const About = lazy(() => import('./pages/About'))
 const Projects = lazy(() => import('./pages/Projects'))
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
+const GenericDetail = lazy(() => import('./components/GenericDetail'))
 // Static per-item pages (pre-generated)
 const P_DistributedSystemSimulator = lazy(() => import('./pages/projects/distributed-system-simulator'))
 const P_ReproducibleResearchFramework = lazy(() => import('./pages/projects/reproducible-research-framework'))
@@ -50,16 +51,19 @@ export default function App(){
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/projects" element={<Projects />} />
-              <Route path="/projects/:id" element={<ProjectDetail />} />
+              <Route path="/projects/:id(\\d+)" element={<ProjectDetail />} />
+              <Route path="/projects/:slug" element={<GenericDetail type="projects" />} />
               <Route path="/projects/distributed-system-simulator" element={<P_DistributedSystemSimulator />} />
               <Route path="/projects/reproducible-research-framework" element={<P_ReproducibleResearchFramework />} />
               <Route path="/projects/violet-dusk-theme" element={<P_VioletDuskTheme />} />
               <Route path="/research" element={<Research />} />
-              <Route path="/research/:id" element={<ResearchDetail />} />
+              <Route path="/research/:id(\\d+)" element={<ResearchDetail />} />
+              <Route path="/research/:slug" element={<GenericDetail type="research" />} />
               <Route path="/research/on-the-efficiency-of-consensus-algorithms-in-dynamic-networks" element={<R_Consensus />} />
               <Route path="/research/reproducibility-in-computational-research-a-case-study" element={<R_ReproCase />} />
               <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:id" element={<BlogDetail />} />
+              <Route path="/blog/:id(\\d+)" element={<BlogDetail />} />
+              <Route path="/blog/:slug" element={<GenericDetail type="blog" />} />
               <Route path="/blog/reflections-on-code-and-clarity" element={<B_Reflections />} />
               <Route path="/blog/building-in-the-amethyst-hours" element={<B_Amethyst />} />
               <Route path="/contact" element={<Contact />} />

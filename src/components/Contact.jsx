@@ -12,15 +12,15 @@ export default function Contact(){
         <div className="mt-6 space-y-4">
           <div className="flex items-center gap-3">
             <span className="text-dim-lilac">Email:</span>
-            <a href="mailto:twisha@example.com" className="text-gray-200 hover:text-rebecca">twisha@example.com</a>
+            <a href="mailto:twishapatel.hq@gmail.com" className="text-gray-200 hover:text-rebecca">twishapatel.hq@gmail.com</a>
           </div>
           <div className="flex items-center gap-3">
             <span className="text-dim-lilac">GitHub:</span>
-            <a href="https://github.com/twisha" className="text-gray-200 hover:text-rebecca">@twisha</a>
+            <a href="https://github.com/twi-exe" className="text-gray-200 hover:text-rebecca">@twi-exe</a>
           </div>
           <div className="flex items-center gap-3">
             <span className="text-dim-lilac">LinkedIn:</span>
-            <a href="https://linkedin.com/in/twisha" className="text-gray-200 hover:text-rebecca">twisha</a>
+            <a href="https://linkedin.com/in/dte-gecbh-com-twisha-patel" className="text-gray-200 hover:text-rebecca">Twisha Patel</a>
           </div>
         </div>
         {/* Placeholder for EmailJS form */}
