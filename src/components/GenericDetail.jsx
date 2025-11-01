@@ -77,17 +77,19 @@ export default function GenericDetail({ type }){
   return (
     <article className="container mx-auto px-4 py-12 max-w-4xl">
       <Link to={`/${type}`} className="text-dim-lilac">← Back</Link>
-      <h1 className="text-4xl font-heading text-rebecca mt-4">{item.title}</h1>
-      {item.authors && <div className="text-gray-300 mt-2">{item.authors} · {item.year}</div>}
+      <div className="card glass mt-4">
+        <h1 className="text-4xl font-bold text-rebecca">{item.title}</h1>
+        {item.authors && <div className="text-gray-300 mt-2">{item.authors} · {item.year}</div>}
 
-      <div className="mt-6 prose prose-invert">
-        {item.content ? <ReactMarkdown>{item.content}</ReactMarkdown> : <p>{item.description}</p>}
-      </div>
+        <div className="mt-6 prose prose-invert">
+          {item.content ? <ReactMarkdown>{item.content}</ReactMarkdown> : <p>{item.description}</p>}
+        </div>
 
-      <div className="mt-6 flex gap-3">
-        {item.link && <a href={item.link} className="btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>}
-        {item.github && <a href={item.github} className="btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>}
-        <Link to={`/${type}`} className="btn-secondary">More {type.charAt(0).toUpperCase() + type.slice(1)}</Link>
+        <div className="mt-6 flex gap-3">
+          {item.link && <a href={item.link} className="btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>}
+          {item.github && <a href={item.github} className="btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>}
+          <Link to={`/${type}`} className="btn-secondary">More {type.charAt(0).toUpperCase() + type.slice(1)}</Link>
+        </div>
       </div>
     </article>
   )

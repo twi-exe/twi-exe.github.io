@@ -5,7 +5,7 @@ export default function About(){
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="max-w-4xl mx-auto card glass">
-        <motion.h1 initial={{opacity:0,y:6}} whileInView={{opacity:1,y:0}} className="text-3xl font-heading text-rebecca mb-6">About</motion.h1>
+        <motion.h1 initial={{opacity:0,y:6}} whileInView={{opacity:1,y:0}} className="text-3xl font-bold text-rebecca mb-6">About</motion.h1>
         <motion.p initial={{opacity:0}} whileInView={{opacity:1}} className="text-gray-200 leading-relaxed">
           I craft systems and sentences. My work sits at the intersection of software engineering, research, and reflective writing — small experiments in clarity under violet light. Currently exploring distributed systems, reproducible research, and ways to make complex ideas feel like a quiet conversation.
         </motion.p>
