@@ -27,6 +27,8 @@ jobs:
         echo "VITE_EMAILJS_TEMPLATE_ID=${{ secrets.EMAILJS_TEMPLATE_ID }}" >> .env
         echo "VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID=${{ secrets.EMAILJS_AUTOREPLY_TEMPLATE_ID }}" >> .env
         echo "VITE_EMAILJS_PUBLIC_KEY=${{ secrets.EMAILJS_PUBLIC_KEY }}" >> .env
+        echo "Environment variables created:"
+        cat .env
 
     - name: Build
       run: npm run build
