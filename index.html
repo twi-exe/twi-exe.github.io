@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Twisha Patel</title>
+    <meta name="description" content="Twisha Patel — engineer · researcher · writer" />
+    <meta property="og:title" content="Twisha Patel — Portfolio" />
+    <meta property="og:description" content="Engineer · researcher · writer" />
+    <meta property="og:image" content="/favicon.png" />
+    <link rel="icon" href="./favicon.ico" />
+    <!--
+      GitHub Pages SPA fallback support:
+      The `public/404.html` redirects unknown routes to `/?/path/to/route`.
+      React Router (BrowserRouter) looks at `location.pathname`, so when the
+      browser lands at `/?/projects/diagonwise` the app sees `/` and doesn't
+      match `/projects/:slug`. This small snippet detects `?/` in the query
+      string and redirects to the decoded path so the router can match
+      client-side routes as expected.
+    -->
+    <script>
+      (function(){
+        try{
+          var s = window.location.search || '';
+          if(s.indexOf('?/') === 0){
+            var newPath = s.slice(2) + window.location.hash;
+            // Redirect to the correct path so React Router can match
+            window.location.replace(newPath);
+          }
+        }catch(e){
+          // noop
+          console.error('Failed to normalize SPA fallback URL', e);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-AOMGgwxP.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DAu0ejyI.css">
+  </head>
+  <body class="bg-abyss text-gray-100">
+    <div id="root"></div>
+
+  </body>
+</html>
