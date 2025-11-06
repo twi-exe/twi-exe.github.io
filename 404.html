@@ -24,13 +24,15 @@
       var pathSegmentsToKeep = 0;
 
       var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      var path = l.pathname;
+      if (pathSegmentsToKeep > 0) {
+        path = '/' + l.pathname.split('/').slice(pathSegmentsToKeep + 1).join('/');
+      }
+      var query = l.search ? l.search.slice(1).replace(/&/g, '~and~') : '';
+      var redirect = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') +
+        '?path=' + encodeURIComponent(path + (query ? '?' + query : '') + l.hash);
+      l.replace(redirect);
 
     </script>
   </head>
