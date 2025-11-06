@@ -85,11 +85,15 @@ export default function GenericDetail({ type }){
           {item.content ? <ReactMarkdown>{item.content}</ReactMarkdown> : <p>{item.description}</p>}
         </div>
 
-        <div className="mt-6 flex gap-3">
-          {item.link && <a href={item.link} className="btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>}
-          {item.github && <a href={item.github} className="btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>}
-          <Link to={`/${type}`} className="btn-secondary">More {type.charAt(0).toUpperCase() + type.slice(1)}</Link>
-        </div>
+        {type !== 'blog' && (
+          <div className="mt-6 flex gap-3">
+            {item.link && <a href={item.link} className="btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>}
+            {item.github && <a href={item.github} className="btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>}
+            {type !== 'projects' && (
+              <Link to={`/${type}`} className="btn-secondary">More {type.charAt(0).toUpperCase() + type.slice(1)}</Link>
+            )}
+          </div>
+        )}
       </div>
     </article>
   )

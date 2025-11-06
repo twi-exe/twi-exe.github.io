@@ -9,4 +9,3 @@ Conducted a thorough Fairness Analysis on the diagnostic framework, exposing sig
 - Applied XAI techniques to EEG features to produce human-interpretable explanations.
 - Discovered Beta PSD in the Right Primary Motor Cortex as a discriminative biomarker for PTSD.
 - Performed fairness audits across demographic groups and proposed mitigation strategies to reduce bias.
-s

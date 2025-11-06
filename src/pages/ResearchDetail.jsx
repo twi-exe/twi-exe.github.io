@@ -35,12 +35,14 @@ export default function ResearchDetail(){
         <div className="flex gap-4">
           {item.link && item.link !== '#' && (
             <a href={item.link} target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-rebecca text-white rounded hover:bg-dim-lilac">
-              View Paper / Repo
+              View Project
             </a>
           )}
-          <Link to="/research" className="px-6 py-3 border border-ash text-gray-200 rounded hover:bg-violet-smoke">
-            More Research
-          </Link>
+          {item.github && (
+            <a href={item.github} target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-ash text-gray-200 rounded hover:bg-violet-smoke">
+              Source Code
+            </a>
+          )}
         </div>
       </motion.div>
     </div>

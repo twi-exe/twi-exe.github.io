@@ -1,19 +1,38 @@
 [  {
     "id":1 ,
-    "slug": "surxit-health-risk-intelligence-platform",
+    "slug": "surxit",
     "title": "suRxit — Health Risk Intelligence Platform",
     "description": "Core ML and data pipeline for clinical entity extraction and GNN-based risk prediction at scale.",
-    "link": "https://github.com/ParmarDarshan29/suRxit",
-    "tags": ["ML", "NLP", "GNN", "MedLM", "Production"],
-    "content": "# suRxit — Health Risk Intelligence Platform\n\nDeveloped and deployed the core ML and data pipeline, standardizing clinical entities from raw documents and feeding the information into a Graph Neural Network (GNN) for risk prediction at scale.\n\nContributed to the full product lifecycle, from high-fidelity data extraction (OCR/NER) to engineering the risk modeling and recommendation service powered by large language models (MedLM).\n\n## Highlights\n- Standardized clinical entity extraction from heterogeneous medical documents (OCR + NER).\n- Built a scalable pipeline that materializes structured clinical graphs for downstream modeling.\n- Trained and deployed a GNN-based risk prediction model for population-level risk scoring.\n- Engineered a MedLM-backed recommendation service for actionable clinical insights.\n"
+    "link": "https://surxit.onrender.com/",
+    "github": "https://github.com/ParmarDarshan29/suRxit",
+  "tags": ["DDI", "NLP", "GNN", "MedLM", "Prescription drugs"]
   },
   {
     "id": 2,
+    "slug": "diagonwise",
+    "title": "DiagonWise — Medical Report Summarizer",
+    "description": "Clinical NLP medical report summarizer that generates concise, privacy-preserving summaries.",
+    "link": "https://diagon-wise.onrender.com/",
+    "github": "https://github.com/twi-exe/diagon-wise",
+    "tags": ["Healthcare", "Medical Report", "Summarization", "LLM"]
+  },
+  {
+    "id": 3,
+    "slug": "retort-ai",
+    "title": "Retort AI",
+    "description": "Chrome/Edge extension that helps generate context-aware replies using OpenRouter.",
+    "link": "https://github.com/twi-exe/retort-ai-extension/releases/latest",
+    "github": "https://github.com/twi-exe/retort-ai-extension",
+    "tags": ["LLM", "NLP", "Openrouter", "Browser Extension"]
+  },
+  {
+    "id": 4,
     "slug": "brain-tumor-detection-and-segmentation",
     "title": "Brain Tumor Detection and Segmentation",
     "description": "Configurable 3D medical image segmentation framework for multi-class glioma segmentation.",
     "link": "#",
-    "tags": ["MONAI", "PyTorch", "Medical Imaging", "Segmentation"],
-    "content": "# Brain Tumor Detection and Segmentation\n\nBuilt a fully configurable 3D medical image segmentation framework for multi-class glioma segmentation using MONAI and PyTorch.\n\nIntegrated U-Net/UNETR/Swin-UNETR backbones with an adaptive hybrid loss (Dice + CE + Tversky), sliding-window inference, and morphological post-processing.\n\nImplemented GPU-tier auto-scaling, training resume support, and quantitative calibration (temperature scaling + MC dropout) for reliable clinical performance.\n"
+    "github": "#",
+    "tags": ["MONAI", "PyTorch", "Medical Imaging", "Segmentation"]
+    
   }
 ]

@@ -1,11 +1,10 @@
 [
   {
     "id": 1,
-    "slug": "building-in-amethyst-hours",
-    "title": "Building in Amethyst Hours.",
-    "date": "2024-10-15",
-    "excerpt": "The lilac evenings turn into amethyst nights, where nocturnal beings rise.",
-    "content": "#",
+    "slug": "grief",
+    "title": "The Notion of Grief.",
+    "date": "2024-08-08",
+    "excerpt": "A natural process that allows individuals to come to terms with their loss and eventually find a way to move forward.",
     "link": "#"
   },
   {
@@ -14,7 +13,6 @@
     "title": "Nothing to lose.",
     "date": "2024-10-16",
     "excerpt": "What more do I have to lose?",
-    "content": "# ",
     "link": "#"
   }
 ]
