@@ -1,0 +1,1 @@
+const t=[{id:1,slug:"grief",title:"The Notion of Grief.",date:"2024-08-08",excerpt:"A natural process that allows individuals to come to terms with their loss and eventually find a way to move forward.",link:"#"},{id:2,slug:"nothing-to-lose",title:"Nothing to lose.",date:"2024-10-16",excerpt:"What more do I have to lose?",link:"#"}];export{t as b};
